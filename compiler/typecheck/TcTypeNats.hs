@@ -15,7 +15,7 @@ module TcTypeNats
 import Type
 import Pair
 import TcType     ( TcType, tcEqType )
-import TyCon      ( TyCon, FamTyConFlav(..), mkFamilyTyCon, TyConParent(..)  )
+import TyCon      ( TyCon, FamTyConFlav(..), mkFamilyTyCon )
 import Coercion   ( Role(..) )
 import TcRnTypes  ( Xi )
 import CoAxiom    ( CoAxiomRule(..), BuiltInSynFamily(..) )
@@ -44,7 +44,7 @@ import qualified Data.Map as Map
 import Data.Maybe ( isJust )
 
 {-------------------------------------------------------------------------------
-Built-in type constructors for functions on type-lelve nats
+Built-in type constructors for functions on type-level nats
 -}
 
 typeNatTyCons :: [TyCon]
@@ -108,7 +108,7 @@ typeNatLeqTyCon =
     (mkArrowKinds [ typeNatKind, typeNatKind ] boolKind)
     (mkTemplateTyVars [ typeNatKind, typeNatKind ])
     (BuiltInSynFamTyCon ops)
-    NoParentTyCon
+    Nothing
 
   where
   name = mkWiredInTyConName UserSyntax gHC_TYPELITS (fsLit "<=?")
@@ -125,7 +125,7 @@ typeNatCmpTyCon =
     (mkArrowKinds [ typeNatKind, typeNatKind ] orderingKind)
     (mkTemplateTyVars [ typeNatKind, typeNatKind ])
     (BuiltInSynFamTyCon ops)
-    NoParentTyCon
+    Nothing
 
   where
   name = mkWiredInTyConName UserSyntax gHC_TYPELITS (fsLit "CmpNat")
@@ -142,7 +142,7 @@ typeSymbolCmpTyCon =
     (mkArrowKinds [ typeSymbolKind, typeSymbolKind ] orderingKind)
     (mkTemplateTyVars [ typeSymbolKind, typeSymbolKind ])
     (BuiltInSynFamTyCon ops)
-    NoParentTyCon
+    Nothing
 
   where
   name = mkWiredInTyConName UserSyntax gHC_TYPELITS (fsLit "CmpSymbol")
@@ -164,7 +164,7 @@ mkTypeNatFunTyCon2 op tcb =
     (mkArrowKinds [ typeNatKind, typeNatKind ] typeNatKind)
     (mkTemplateTyVars [ typeNatKind, typeNatKind ])
     (BuiltInSynFamTyCon tcb)
-    NoParentTyCon
+    Nothing
 
 
 
