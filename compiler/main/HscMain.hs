@@ -95,6 +95,7 @@ import Type             ( Type )
 import {- Kind parts of -} Type         ( Kind )
 import CoreLint         ( lintInteractiveExpr )
 import VarEnv           ( emptyTidyEnv )
+import THNames          ( templateHaskellNames )
 import Panic
 import ConLike
 
