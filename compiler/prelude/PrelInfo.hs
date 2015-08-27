@@ -72,15 +72,26 @@ Notes about wired in things
 
 
 knownKeyNames :: [Name]
--- This list is used to ensure that when you say "Prelude.map" in your
--- source code, you get a Name with the correct known key
+-- This list is used to ensure that when you say "Prelude.map"
+--  in your source code, or in an interface file,
+-- you get a Name with the correct known key
 -- (See Note [Known-key names] in PrelNames)
 knownKeyNames
   = concat [ tycon_kk_names funTyCon
            , concatMap tycon_kk_names primTyCons
+
            , concatMap tycon_kk_names wiredInTyCons
+             -- Does not include tuples
+
            , concatMap tycon_kk_names typeNatTyCons
+
            , concatMap (rep_names . tupleTyCon Boxed) [2..mAX_TUPLE_SIZE]  -- Yuk
+
+           , cTupleTyConNames
+             -- Constraint tuples are known-key but not wired-in
+             -- They can't show up in source code, but can appear
+             -- in intreface files
+
            , map idName wiredInIds
            , map (idName . primOpId) allThePrimOps
            , basicKnownKeyNames ]
