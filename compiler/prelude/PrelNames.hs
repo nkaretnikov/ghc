@@ -206,11 +206,9 @@ basicKnownKeyNames
         -- Typeable
         typeableClassName,
         typeRepTyConName,
-        mkTyConName,
         mkPolyTyConAppName,
         mkAppTyName,
-        typeNatTypeRepName,
-        typeSymbolTypeRepName,
+        typeLitTypeRepName,
 
         -- Dynamic
         toDynName,
@@ -1926,7 +1924,7 @@ mkTyConKey            = mkPreludeMiscIdUnique 503
 mkPolyTyConAppKey     = mkPreludeMiscIdUnique 504
 mkAppTyKey            = mkPreludeMiscIdUnique 505
 typeLitTypeRepKey     = mkPreludeMiscIdUnique 506
-typeRepIdKey      = mkPreludeMiscIdUnique 508
+typeRepIdKey          = mkPreludeMiscIdUnique 508
 
 -- Dynamic
 toDynIdKey :: Unique

@@ -1,5 +1,5 @@
 {-# LANGUAGE MagicHash, NoImplicitPrelude, TypeFamilies, UnboxedTuples,
-             MultiParamTypeClasses, RoleAnnotations #-}
+             MultiParamTypeClasses, RoleAnnotations, CPP #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  GHC.Types
@@ -30,7 +30,7 @@ module GHC.Types (
         SPEC(..),
         Nat, Symbol,
         Coercible,
-        SrcLoc(..), CallStack(..)
+        SrcLoc(..), CallStack(..),
         TyCon(..), TrName(..), Module(..)
     ) where
 

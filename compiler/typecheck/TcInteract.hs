@@ -23,7 +23,7 @@ import TcType
 import Name
 import PrelNames ( knownNatClassName, knownSymbolClassName,
                    callStackTyConKey, typeableClassName )
-import TysWiredIn ( ipClass, typeNatKind, typeSymbolKind )
+import TysWiredIn ( ipClass )
 import Id( idType )
 import Class
 import TyCon
@@ -771,7 +771,7 @@ interactGivenIP _ wi = pprPanic "interactGivenIP" (ppr wi)
 -- i.e.   (IP "name" CallStack)
 isCallStackIP :: CtLoc -> Class -> [Type] -> Maybe (EvTerm -> EvCallStack)
 isCallStackIP loc cls tys
-  | cls `hasKey` ipClassNameKey
+  | cls == ipClass
   , [_ip_name, ty] <- tys
   , Just (tc, _) <- splitTyConApp_maybe ty
   , tc `hasKey` callStackTyConKey

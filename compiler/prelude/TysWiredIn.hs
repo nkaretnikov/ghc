@@ -984,6 +984,7 @@ ipCoName      = mkWiredInCoAxiomName BuiltInSyntax gHC_CLASSES (fsLit "NTCo:IP")
 -- See Note [The Implicit Parameter class]
 ipTyCon :: TyCon
 ipTyCon = mkClassTyCon ipTyConName kind [ip,a] [] rhs ipClass NonRecursive
+                       (mkPrelTyConRepName ipTyConName)
   where
     kind = mkArrowKinds [typeSymbolKind, liftedTypeKind] constraintKind
     [ip,a] = mkTemplateTyVars [typeSymbolKind, liftedTypeKind]
