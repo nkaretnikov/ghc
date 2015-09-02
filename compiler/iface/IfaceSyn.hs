@@ -694,7 +694,6 @@ pprIfaceDecl ss (IfaceFamily { ifName = tycon, ifTyVars = tyvars
     pp_rhs IfaceBuiltInSynFamTyCon
       = ppShowIface ss (ptext (sLit "built-in"))
 
-
     pp_branches (IfaceClosedSynFamilyTyCon (Just (ax, brs)))
       = vcat (map (pprAxBranch (pprPrefixIfDeclBndr ss tycon)) brs)
         $$ ppShowIface ss (ptext (sLit "axiom") <+> ppr ax)

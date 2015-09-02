@@ -17,6 +17,7 @@ module DataCon (
 
         -- ** Type construction
         mkDataCon, fIRST_TAG,
+        buildAlgTyCon,
 
         -- ** Type deconstruction
         dataConRepType, dataConSig, dataConInstSig, dataConFullSig,
@@ -46,8 +47,6 @@ module DataCon (
         promoteDataCon, promoteDataCon_maybe,
         promoteType, promoteKind,
         isPromotableType, computeTyConPromotability,
-
-        buildAlgTyCon
     ) where
 
 #include "HsVersions.h"

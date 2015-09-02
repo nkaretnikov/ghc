@@ -23,11 +23,8 @@ module GHC.IntWord64 (
 #endif
     ) where
 
-import GHC.Types ()
-
 #if WORD_SIZE_IN_BITS < 64
 import GHC.Prim
-import GHC.CString ()  -- So that unpackCString# works
 
 foreign import ccall unsafe "hs_eqWord64"    eqWord64#     :: Word64# -> Word64# -> Int#
 foreign import ccall unsafe "hs_neWord64"    neWord64#     :: Word64# -> Word64# -> Int#

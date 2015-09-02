@@ -60,7 +60,7 @@ import MonadUtils       ( mapAccumLM )
 import Data.List        ( mapAccumL )
 import Control.Monad
 
-#if __GLASGOW_HASKELL__ < 709
+#if __GLASGOW_HASKELL__ < 710
 import Control.Applicative
 #endif
 
