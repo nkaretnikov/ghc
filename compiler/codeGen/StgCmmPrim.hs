@@ -824,6 +824,10 @@ callishPrimOpSupported dflags op
                          || llvm      -> Left (MO_Add2       (wordWidth dflags))
                      | otherwise      -> Right genericWordAdd2Op
 
+      WordSubCOp     | (ncg && x86ish)
+                         || llvm      -> Left (MO_SubWordC   (wordWidth dflags))
+                     | otherwise      -> Right genericWordSubCOp
+
       IntAddCOp      | (ncg && x86ish)
                          || llvm      -> Left (MO_AddIntC    (wordWidth dflags))
                      | otherwise      -> Right genericIntAddCOp
@@ -939,6 +943,10 @@ genericWordAdd2Op [res_h, res_l] [arg_x, arg_y]
                (or (toTopHalf (CmmReg (CmmLocal r2)))
                    (bottomHalf (CmmReg (CmmLocal r1))))]
 genericWordAdd2Op _ _ = panic "genericWordAdd2Op"
+
+-- XXX: Define.
+genericWordSubCOp :: GenericOp
+genericWordSubCOp = undefined
 
 genericIntAddCOp :: GenericOp
 genericIntAddCOp [res_r, res_c] [aa, bb]
