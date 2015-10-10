@@ -944,9 +944,18 @@ genericWordAdd2Op [res_h, res_l] [arg_x, arg_y]
                    (bottomHalf (CmmReg (CmmLocal r1))))]
 genericWordAdd2Op _ _ = panic "genericWordAdd2Op"
 
--- XXX: Define.
 genericWordSubCOp :: GenericOp
-genericWordSubCOp = undefined
+genericWordSubCOp [res_r, res_c] [aa, bb] = do
+  dflags <- getDynFlags
+  emit $ catAGraphs
+    [ -- Put the result into 'res_r'.
+      mkAssign (CmmLocal res_r) $
+        CmmMachOp (mo_wordSub dflags) [aa, bb]
+      -- Set 'res_c' to 1 if 'bb > aa' and to 0 otherwise.
+    , mkAssign (CmmLocal res_c) $
+        CmmMachOp (mo_wordUGt dflags) [bb, aa]
+    ]
+genericWordSubCOp _ _ = panic "genericWordSubCOp"
 
 genericIntAddCOp :: GenericOp
 genericIntAddCOp [res_r, res_c] [aa, bb]
