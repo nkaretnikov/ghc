@@ -2124,7 +2124,8 @@ genCCall _ is32Bit target dest_regs args = do
         divOp _ _ _ _ _ _ _
             = panic "genCCall: Wrong number of results for divOp"
 
-        addSubIntC platform instr mrevinstr cond width res_r res_c [arg_x, arg_y]
+        addSubIntC platform instr mrevinstr cond width
+                   res_r res_c [arg_x, arg_y]
             = do let format = intFormat width
                  rCode <- anyReg =<< trivialCode width (instr format)
                                        (mrevinstr format) arg_x arg_y
