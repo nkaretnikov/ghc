@@ -475,7 +475,7 @@ genCall target res args = runStmtsDecls $ do
 genCallWithOverflow
   :: ForeignTarget -> Width -> [CmmFormal] -> [CmmActual] -> LlvmM StmtData
 genCallWithOverflow t@(PrimTarget op) w [dstV, dstO] [lhs, rhs] = do
-    -- So far this was only tested for the following three CallishMachOps.
+    -- So far this was only tested for the following four CallishMachOps.
     MASSERT( (op `elem` [ MO_Add2 w
                         , MO_AddIntC w
                         , MO_SubIntC w
