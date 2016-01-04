@@ -274,7 +274,7 @@ AC_DEFUN([FPTOOLS_SET_HASKELL_PLATFORM_VARS],
         nto-qnx)
             test -z "[$]2" || eval "[$]2=OSQNXNTO"
             ;;
-        dragonfly|osf1|hpux|linuxaout|freebsd2|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix)
+        dragonfly|osf1|hpux|linuxaout|freebsd2|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|elf)
             test -z "[$]2" || eval "[$]2=OSUnknown"
             ;;
         linux-android)
@@ -1856,7 +1856,7 @@ case "$1-$2" in
         $3="linux"
         ;;
       # As far as I'm aware, none of these have relevant variants
-      freebsd|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku)
+      freebsd|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku|elf)
         $3="$1"
         ;;
       freebsd*) # like i686-gentoo-freebsd7
