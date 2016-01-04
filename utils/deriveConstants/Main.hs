@@ -680,6 +680,7 @@ getWanted verbose tmpdir gccProgram gccFlags nmProgram
                      "",
                      "#define PROFILING",
                      "#define THREADED_RTS",
+                     "#define _POSIX_THREADS 1",
                      "",
                      "#include \"PosixSource.h\"",
                      "#include \"Rts.h\"",
