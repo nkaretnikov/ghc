@@ -41,9 +41,10 @@
 #if HAVE_FCNTL_H
 # include <fcntl.h>
 #endif
-#if HAVE_TERMIOS_H
-#include <termios.h>
-#endif
+// XXX: Newlib's <termios.h> points to <sys/termios.h>, which doesn't exist.
+// #if HAVE_TERMIOS_H
+// #include <termios.h>
+// #endif
 #if HAVE_SIGNAL_H
 #include <signal.h>
 /* Ultra-ugly: OpenBSD uses broken macros for sigemptyset and sigfillset (missing casts) */
@@ -61,9 +62,10 @@
 #if HAVE_UTIME_H
 #include <utime.h>
 #endif
-#if HAVE_SYS_UTSNAME_H
-#include <sys/utsname.h>
-#endif
+// XXX: Newlib doesn't have this header.
+// #if HAVE_SYS_UTSNAME_H
+// #include <sys/utsname.h>
+// #endif
 #if HAVE_GETTIMEOFDAY
 #  if HAVE_SYS_TIME_H
 #   include <sys/time.h>
