@@ -41,10 +41,9 @@
 #if HAVE_FCNTL_H
 # include <fcntl.h>
 #endif
-// XXX: Newlib's <termios.h> points to <sys/termios.h>, which doesn't exist.
-// #if HAVE_TERMIOS_H
-// #include <termios.h>
-// #endif
+#if HAVE_TERMIOS_H
+#include <termios.h>
+#endif
 #if HAVE_SIGNAL_H
 #include <signal.h>
 /* Ultra-ugly: OpenBSD uses broken macros for sigemptyset and sigfillset (missing casts) */

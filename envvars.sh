@@ -22,7 +22,7 @@ NEWLIBLIB="$HOME/x86_64/x86_64-elf/lib"
 #
 # XXX: Move the definition of '_POSIX_THREADS' (from
 # utils/deriveConstants/Main.hs) here.
-HASKELL_BASE_CFLAGS="-DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1"
+HASKELL_BASE_CFLAGS="-DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1 -DHAVE_TERMIOS_H=0"
 EFI_CFLAGS="$EFIINCS -I$NEWLIBINC -fno-stack-protector -fpic -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER"
 CFLAGS="$EFI_CFLAGS $HASKELL_BASE_CFLAGS"
 LDFLAGS="-nostdlib -znocombreloc -T $EFI_LDS -shared -Bsymbolic -L $EFILIB $EFI_CRT_OBJS -L $NEWLIBLIB"
