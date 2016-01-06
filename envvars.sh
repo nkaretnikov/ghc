@@ -26,7 +26,8 @@ export CONF_GCC_LINKER_OPTS_STAGE1="$LDFLAGS"
 
 BIN_PREFIX="$PREFIX/bin/x86_64-elf-"
 
-# '-C' is a work around the C compiler check.
+# XXX: I commented out the C compiler checks in 'configure' scripts, so the '-C'
+# flag is required to correctly set the sizes and so on.
 ./configure \
   CC="${BIN_PREFIX}gcc" \
   CPP="${BIN_PREFIX}gcc -E" \
