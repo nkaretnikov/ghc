@@ -19,6 +19,9 @@ NEWLIBLIB="$HOME/x86_64/x86_64-elf/lib"
 #
 # XXX: I've been told that it might be easier to pass CFLAGS and LDFLAGS
 # directly to '--with-gcc' and '--with-ld'.  Haven't tried that yet.
+#
+# XXX: Move the definition of '_POSIX_THREADS' (from
+# utils/deriveConstants/Main.hs) here.
 HASKELL_BASE_CFLAGS="-DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1"
 EFI_CFLAGS="$EFIINCS -I$NEWLIBINC -fno-stack-protector -fpic -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER"
 CFLAGS="$EFI_CFLAGS $HASKELL_BASE_CFLAGS"
