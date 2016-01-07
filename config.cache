@@ -18,7 +18,7 @@ ac_cv_c_const=${ac_cv_c_const=yes}
 ac_cv_env_CC_set=set
 ac_cv_env_CC_value=/home/nikita/x86_64/bin/x86_64-elf-gcc
 ac_cv_env_CFLAGS_set=set
-ac_cv_env_CFLAGS_value='-I/home/nikita/x86_64/include/efi -I/home/nikita/x86_64/include/efi/x86_64 -I/home/nikita/x86_64/include/efi/protocol -I/home/nikita/x86_64/x86_64-elf/include -fno-stack-protector -fpic -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER -DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1 -DHAVE_TERMIOS_H=0'
+ac_cv_env_CFLAGS_value='-I/home/nikita/x86_64/include/efi -I/home/nikita/x86_64/include/efi/x86_64 -I/home/nikita/x86_64/include/efi/protocol -I/home/nikita/x86_64/x86_64-elf/include -fno-stack-protector -fpic -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER -DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1 -DHAVE_TERMIOS_H=0 -D_POSIX_REALTIME_SIGNALS=1'
 ac_cv_env_CPPFLAGS_set=
 ac_cv_env_CPPFLAGS_value=
 ac_cv_env_CPP_set=set
