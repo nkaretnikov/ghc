@@ -32,21 +32,4 @@ export CONF_CC_OPTS_STAGE1="$CFLAGS"
 export CONF_GCC_LINKER_OPTS_STAGE1="$LDFLAGS"
 
 BIN_PREFIX="$PREFIX/bin/x86_64-elf-"
-
-# XXX: I commented out the C compiler checks in 'configure' scripts, so the '-C'
-# flag is required to correctly set the sizes and so on.
-./configure \
-  CC="${BIN_PREFIX}gcc" \
-  CPP="${BIN_PREFIX}gcc -E" \
-  CFLAGS="$CFLAGS" \
-  LDFLAGS="$LDFLAGS" \
-  LIBS="-lefi -lgnuefi -lc" \
-  -C \
-  --target=$TARGET \
-  --prefix=$PREFIX \
-  --with-gcc="${BIN_PREFIX}gcc" \
-  --with-ld="${BIN_PREFIX}ld" \
-  --with-nm="${BIN_PREFIX}nm" \
-  --with-ar="${BIN_PREFIX}ar" \
-  --with-ranlib="${BIN_PREFIX}ranlib" \
-  --with-objdump="${BIN_PREFIX}objdump"
+LIBS="-lefi -lgnuefi -lc" \
