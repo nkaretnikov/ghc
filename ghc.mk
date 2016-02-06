@@ -422,7 +422,9 @@ else # CLEANING
 PACKAGES_STAGE0 = binary Cabal/Cabal hpc ghc-boot hoopl transformers template-haskell
 ifeq "$(Windows_Host)" "NO"
 ifneq "$(HostOS_CPP)" "ios"
+ifneq "$(TargetPlatform_CPP)" "x86_64_unknown_elf"
 PACKAGES_STAGE0 += terminfo
+endif
 endif
 endif
 
