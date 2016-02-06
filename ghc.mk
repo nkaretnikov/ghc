@@ -462,7 +462,9 @@ endif
 
 ifeq "$(Windows_Target)" "NO"
 ifneq "$(TargetOS_CPP)" "ios"
+ifneq "$(TargetPlatform_CPP)" "x86_64_unknown_elf"
 PACKAGES_STAGE1 += terminfo
+endif
 endif
 endif
 PACKAGES_STAGE1 += haskeline
