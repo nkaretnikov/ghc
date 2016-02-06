@@ -467,7 +467,9 @@ PACKAGES_STAGE1 += terminfo
 endif
 endif
 endif
+ifneq "$(TargetPlatform_CPP)" "x86_64_unknown_elf"
 PACKAGES_STAGE1 += haskeline
+endif
 
 # See Note [No stage2 packages when CrossCompiling or Stage1Only].
 # See Note [Stage1Only vs stage=1] in mk/config.mk.in.
