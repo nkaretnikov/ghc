@@ -43,7 +43,7 @@ ac_cv_func_kevent64=${ac_cv_func_kevent64=no}
 ac_cv_func_kevent=${ac_cv_func_kevent=no}
 ac_cv_func_kqueue=${ac_cv_func_kqueue=no}
 ac_cv_func_lstat=${ac_cv_func_lstat=no}
-ac_cv_func_poll=${ac_cv_func_poll=no}
+ac_cv_func_poll=${ac_cv_func_poll=yes}
 ac_cv_func_times=${ac_cv_func_times=no}
 ac_cv_func_unsetenv=${ac_cv_func_unsetenv=no}
 ac_cv_header_ctype_h=${ac_cv_header_ctype_h=yes}
@@ -53,7 +53,7 @@ ac_cv_header_inttypes_h=${ac_cv_header_inttypes_h=yes}
 ac_cv_header_langinfo_h=${ac_cv_header_langinfo_h=yes}
 ac_cv_header_limits_h=${ac_cv_header_limits_h=yes}
 ac_cv_header_memory_h=${ac_cv_header_memory_h=no}
-ac_cv_header_poll_h=${ac_cv_header_poll_h=no}
+ac_cv_header_poll_h=${ac_cv_header_poll_h=yes}
 ac_cv_header_signal_h=${ac_cv_header_signal_h=yes}
 ac_cv_header_stdc=${ac_cv_header_stdc=yes}
 ac_cv_header_stdint_h=${ac_cv_header_stdint_h=yes}
