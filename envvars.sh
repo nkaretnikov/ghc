@@ -1,5 +1,5 @@
 export PATH="$HOME/x86_64/bin:/usr/local/bin:/usr/bin:/bin"
-export PREFIX="$HOME/x86_64"
+export PREFIX="$HOME/x86_64-elf"
 export TARGET="x86_64-elf"
 # export C_INCLUDE_PATH=$PREFIX/include/efi:$PREFIX/x86_64-elf/include
 # export LD_LIBRARY_PATH=$PREFIX/lib:$PREFIX/x86_64-elf/lib
@@ -29,7 +29,7 @@ LIBSTUBSRC="libstub/src"
 # utils/deriveConstants/Main.hs) here.
 HASKELL_BASE_CFLAGS="-DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1 -DHAVE_TERMIOS_H=0 -D_POSIX_REALTIME_SIGNALS=1"
 HASKELL_TIME_CFLAGS="-D__TM_ZONE=tm_zone"
-EFI_CFLAGS="$EFIINCS -I$NEWLIBINC -I$LIBSTUBINC -fno-stack-protector -fpic -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER"
+EFI_CFLAGS="-fPIC $EFIINCS -I$NEWLIBINC -I$LIBSTUBINC -fno-stack-protector -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER"
 CFLAGS="$EFI_CFLAGS $HASKELL_BASE_CFLAGS $HASKELL_TIME_CFLAGS"
 LDFLAGS="-nostdlib -znocombreloc -T $EFI_LDS -shared -L $EFILIB $EFI_CRT_OBJS -L $NEWLIBLIB -L $LIBSTUBLIB"
 
