@@ -1,3 +1,5 @@
+set -e
+
 export PATH="$HOME/x86_64/bin:/usr/local/bin:/usr/bin:/bin"
 export PREFIX="$HOME/x86_64-elf"
 export TARGET="x86_64-elf"
@@ -38,3 +40,5 @@ export CONF_GCC_LINKER_OPTS_STAGE1="$LDFLAGS"
 
 BIN_PREFIX="$PREFIX/bin/x86_64-elf-"
 LIBS="-Bstatic -lc -Bsymbolic -lefi -lgnuefi -lstub"
+
+GHC_DIR="$HOME/haskell/ghc"

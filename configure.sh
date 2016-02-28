@@ -1,10 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
 source envvars.sh
 
-# XXX: I commented out the C compiler checks in 'configure' scripts, so the '-C'
-# flag is required to correctly set the sizes and so on.
 ./configure \
   CPP="${BIN_PREFIX}gcc -E" \
-  -C \
   --target=$TARGET \
   --prefix=$PREFIX \
   --with-gcc="/home/nikita/haskell/ghc/gcc.sh" \
