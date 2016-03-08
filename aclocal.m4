@@ -1190,7 +1190,7 @@ GccLT34=NO
 GccLT46=NO
 AC_CACHE_CHECK([version of gcc], [fp_cv_gcc_version],
 [
-    fp_cv_gcc_version="`$CC -v 2>&1 | grep 'version ' | sed -e 's/.*version [[^0-9]]*\([[0-9.]]*\).*/\1/g'`"
+    fp_cv_gcc_version="`$CC -v 2>&1 | grep 'version ' | head -n1 | sed -e 's/.*version [[^0-9]]*\([[0-9.]]*\).*/\1/g'`"
     FP_COMPARE_VERSIONS([$fp_cv_gcc_version], [-lt], [3.0],
                         [AC_MSG_ERROR([Need at least gcc version 3.0 (3.4+ recommended)])])
     # See #2770: gcc 2.95 doesn't work any more, apparently.  There probably
