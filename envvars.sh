@@ -3,6 +3,7 @@ set -e
 export PATH="$HOME/x86_64/bin:/usr/local/bin:/usr/bin:/bin"
 export PREFIX="$HOME/x86_64-elf"
 export TARGET="x86_64-elf"
+GHC_DIR="$HOME/haskell/ghc"
 # export C_INCLUDE_PATH=$PREFIX/include/efi:$PREFIX/x86_64-elf/include
 # export LD_LIBRARY_PATH=$PREFIX/lib:$PREFIX/x86_64-elf/lib
 
@@ -15,10 +16,10 @@ EFI_CRT_OBJS="$EFILIB/crt0-efi-${ARCH}.o"
 EFI_LDS="$EFILIB/elf_${ARCH}_efi.lds"
 NEWLIBINC="$HOME/x86_64/x86_64-elf/include"
 NEWLIBLIB="$HOME/x86_64/x86_64-elf/lib"
-LIBSTUBINC="libstub/include"
-LIBSTUBLIB="libstub/lib"
-LIBSTUBOBJ="libstub/obj"
-LIBSTUBSRC="libstub/src"
+LIBSTUBINC="$GHC_DIR/libstub/include"
+LIBSTUBLIB="$GHC_DIR/libstub/lib"
+LIBSTUBOBJ="$GHC_DIR/libstub/obj"
+LIBSTUBSRC="$GHC_DIR/libstub/src"
 
 # XXX: I locally added a check for __x86_64__ to <sys/unistd.h> to expose
 # 'ftruncate'.  Ditto for 'siginfo_t' in <sys/signal.h>.  This should be
@@ -40,5 +41,3 @@ export CONF_GCC_LINKER_OPTS_STAGE1="$LDFLAGS"
 
 BIN_PREFIX="$PREFIX/bin/x86_64-elf-"
 LIBS="-Bstatic -lc -Bsymbolic -lefi -lgnuefi -lstub"
-
-GHC_DIR="$HOME/haskell/ghc"
