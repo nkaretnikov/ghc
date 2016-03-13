@@ -323,6 +323,7 @@ endif
 
 #-----------------------------------------------------------------------------
 # Flags for compiling specific files
+rts/Linker_CC_OPTS += -Wno-old-style-declaration
 rts/RtsMessages_CC_OPTS += -DProjectVersion=\"$(ProjectVersion)\"
 rts/RtsUtils_CC_OPTS += -DProjectVersion=\"$(ProjectVersion)\"
 rts/Trace_CC_OPTS += -DProjectVersion=\"$(ProjectVersion)\"
