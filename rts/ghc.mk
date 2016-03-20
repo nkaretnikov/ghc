@@ -327,6 +327,7 @@ rts/Linker_CC_OPTS += -Wno-old-style-declaration
 rts/posix/OSMem_CC_OPTS += -Wno-redundant-decls
 rts/posix/Itimer_CC_OPTS += -Wno-unused-value
 rts/posix/TTY_CC_OPTS += -Wno-unused-value
+rts/posix/Signals_CC_OPTS += -Wno-unused-value
 rts/RtsMessages_CC_OPTS += -DProjectVersion=\"$(ProjectVersion)\"
 rts/RtsUtils_CC_OPTS += -DProjectVersion=\"$(ProjectVersion)\"
 rts/Trace_CC_OPTS += -DProjectVersion=\"$(ProjectVersion)\"
