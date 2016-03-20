@@ -8,6 +8,7 @@ x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/iconv.o" "${LIBSTUBSRC}/iconv.c"
 x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/mman.o" "${LIBSTUBSRC}/mman.c"
 x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/poll.o" "${LIBSTUBSRC}/poll.c"
 x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/signal.o" "${LIBSTUBSRC}/signal.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/termios.o" "${LIBSTUBSRC}/termios.c"
 x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/time.o" "${LIBSTUBSRC}/time.c"
 x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/times.o" "${LIBSTUBSRC}/times.c"
 x86_64-elf-ar cr \
@@ -16,6 +17,7 @@ x86_64-elf-ar cr \
   "${LIBSTUBOBJ}/mman.o" \
   "${LIBSTUBOBJ}/poll.o" \
   "${LIBSTUBOBJ}/signal.o" \
+  "${LIBSTUBOBJ}/termios.o" \
   "${LIBSTUBOBJ}/time.o" \
   "${LIBSTUBOBJ}/times.o"
 
