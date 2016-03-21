@@ -389,7 +389,8 @@ stg_sig_install(int sig, int spi, void *mask)
         break;
 
     case STG_SIG_RST:
-        action.sa_flags |= SA_RESETHAND;
+        // XXX: Newlib doesn't have this constant.
+        // action.sa_flags |= SA_RESETHAND;
         /* fall through */
     case STG_SIG_HAN:
         action.sa_sigaction = generic_handler;

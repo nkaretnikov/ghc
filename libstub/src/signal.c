@@ -3,8 +3,6 @@
 
 #include <signal.h>
 
-#define SA_RESETHAND 0x80000000
-
 int sigaction(int signum, const struct sigaction *act,
               struct sigaction *oldact)
 {
