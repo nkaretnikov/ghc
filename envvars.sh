@@ -16,10 +16,10 @@ EFI_CRT_OBJS="$EFILIB/crt0-efi-${ARCH}.o"
 EFI_LDS="$EFILIB/elf_${ARCH}_efi.lds"
 NEWLIBINC="$HOME/x86_64/x86_64-elf/include"
 NEWLIBLIB="$HOME/x86_64/x86_64-elf/lib"
-LIBSTUBINC="$GHC_DIR/libstub/include"
-LIBSTUBLIB="$GHC_DIR/libstub/lib"
-LIBSTUBOBJ="$GHC_DIR/libstub/obj"
-LIBSTUBSRC="$GHC_DIR/libstub/src"
+LIBSHIMINC="$GHC_DIR/libshim/include"
+LIBSHIMLIB="$GHC_DIR/libshim/lib"
+LIBSHIMOBJ="$GHC_DIR/libshim/obj"
+LIBSHIMSRC="$GHC_DIR/libshim/src"
 
 # XXX: I locally added a check for __x86_64__ to <sys/unistd.h> to expose
 # 'ftruncate'.  Ditto for 'siginfo_t' in <sys/signal.h>.  This should be
@@ -32,12 +32,12 @@ LIBSTUBSRC="$GHC_DIR/libstub/src"
 # utils/deriveConstants/Main.hs) here.
 HASKELL_BASE_CFLAGS="-DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1 -DHAVE_TERMIOS_H=0 -D_POSIX_REALTIME_SIGNALS=1"
 HASKELL_TIME_CFLAGS="-D__TM_ZONE=tm_zone"
-EFI_CFLAGS="-fPIC $EFIINCS -I$NEWLIBINC -I$LIBSTUBINC -fno-stack-protector -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER"
+EFI_CFLAGS="-fPIC $EFIINCS -I$NEWLIBINC -I$LIBSHIMINC -fno-stack-protector -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER"
 CFLAGS="$EFI_CFLAGS $HASKELL_BASE_CFLAGS $HASKELL_TIME_CFLAGS"
-LDFLAGS="-nostdlib -znocombreloc -T $EFI_LDS -shared -L $EFILIB $EFI_CRT_OBJS -L $NEWLIBLIB -L $LIBSTUBLIB"
+LDFLAGS="-nostdlib -znocombreloc -T $EFI_LDS -shared -L $EFILIB $EFI_CRT_OBJS -L $NEWLIBLIB -L $LIBSHIMLIB"
 
 export CONF_CC_OPTS_STAGE1="$CFLAGS"
 export CONF_GCC_LINKER_OPTS_STAGE1="$LDFLAGS"
 
 BIN_PREFIX="$PREFIX/bin/x86_64-elf-"
-LIBS="-Bstatic -lc -Bsymbolic -lefi -lgnuefi -lstub"
+LIBS="-Bstatic -lc -Bsymbolic -lefi -lgnuefi -lshim"

@@ -4,22 +4,22 @@ set -e
 
 source $HOME/haskell/ghc/envvars.sh
 
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/iconv.o" "${LIBSTUBSRC}/iconv.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/mman.o" "${LIBSTUBSRC}/mman.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/poll.o" "${LIBSTUBSRC}/poll.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/signal.o" "${LIBSTUBSRC}/signal.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/termios.o" "${LIBSTUBSRC}/termios.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/time.o" "${LIBSTUBSRC}/time.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSTUBOBJ}/times.o" "${LIBSTUBSRC}/times.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/iconv.o" "${LIBSHIMSRC}/iconv.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/mman.o" "${LIBSHIMSRC}/mman.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/poll.o" "${LIBSHIMSRC}/poll.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/signal.o" "${LIBSHIMSRC}/signal.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/termios.o" "${LIBSHIMSRC}/termios.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/time.o" "${LIBSHIMSRC}/time.c"
+x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/times.o" "${LIBSHIMSRC}/times.c"
 x86_64-elf-ar cr \
-  "${LIBSTUBLIB}/libstub.a" \
-  "${LIBSTUBOBJ}/iconv.o" \
-  "${LIBSTUBOBJ}/mman.o" \
-  "${LIBSTUBOBJ}/poll.o" \
-  "${LIBSTUBOBJ}/signal.o" \
-  "${LIBSTUBOBJ}/termios.o" \
-  "${LIBSTUBOBJ}/time.o" \
-  "${LIBSTUBOBJ}/times.o"
+  "${LIBSHIMLIB}/libshim.a" \
+  "${LIBSHIMOBJ}/iconv.o" \
+  "${LIBSHIMOBJ}/mman.o" \
+  "${LIBSHIMOBJ}/poll.o" \
+  "${LIBSHIMOBJ}/signal.o" \
+  "${LIBSHIMOBJ}/termios.o" \
+  "${LIBSHIMOBJ}/time.o" \
+  "${LIBSHIMOBJ}/times.o"
 
 ./configure \
   CPP="${BIN_PREFIX}gcc -E" \
