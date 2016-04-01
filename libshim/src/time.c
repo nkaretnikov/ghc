@@ -1,8 +1,8 @@
 #include <efi.h>
 #include <efilib.h>
 
-#include <../include/time.h>
-#include <../include/sys/signal.h>
+#include "../include/time.h"
+#include "../include/sys/signal.h"
 
 
 int timer_create(

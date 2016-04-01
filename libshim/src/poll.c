@@ -1,7 +1,7 @@
 #include <efi.h>
 #include <efilib.h>
 
-#include <../include/poll.h>
+#include "../include/poll.h"
 
 int poll(struct pollfd *fds, nfds_t nfds, int timeout)
 {

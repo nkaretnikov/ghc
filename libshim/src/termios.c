@@ -1,7 +1,7 @@
 #include <efi.h>
 #include <efilib.h>
 
-#include <../include/termios.h>
+#include "../include/termios.h"
 
 int tcgetattr(int fd, struct termios *termios_p)
 {
