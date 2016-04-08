@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/wordexp.h"
+#include_next <wordexp.h>

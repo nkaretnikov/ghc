@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/_ansi.h"
+#include_next <_ansi.h>

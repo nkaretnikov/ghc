@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/lock.h"
+#include_next <sys/lock.h>

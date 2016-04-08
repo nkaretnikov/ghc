@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/reent.h"
+#include_next <sys/reent.h>

@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/paths.h"
+#include_next <paths.h>

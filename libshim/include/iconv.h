@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/iconv.h"
+#include_next <iconv.h>

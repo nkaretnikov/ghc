@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/regdef.h"
+#include_next <regdef.h>

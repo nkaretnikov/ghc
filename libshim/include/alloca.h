@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/alloca.h"
+#include_next <alloca.h>

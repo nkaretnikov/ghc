@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/machine/time.h"
+#include_next <machine/time.h>

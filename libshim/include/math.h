@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/math.h"
+#include_next <math.h>

@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/fcntl.h"
+#include_next <fcntl.h>

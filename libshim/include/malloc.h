@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/malloc.h"
+#include_next <malloc.h>

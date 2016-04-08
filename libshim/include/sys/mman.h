@@ -1,5 +1,5 @@
-#include <stddef.h>
-#include <sys/types.h>
+#include_next <stddef.h>
+#include_next <sys/types.h>
 
 #define PROT_READ     0x1
 #define PROT_WRITE    0x2

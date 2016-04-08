@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/glob.h"
+#include_next <glob.h>

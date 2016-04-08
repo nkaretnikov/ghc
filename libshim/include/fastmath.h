@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/fastmath.h"
+#include_next <fastmath.h>

@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/pthread.h"
+#include_next <pthread.h>

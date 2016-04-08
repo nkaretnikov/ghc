@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/envz.h"
+#include_next <envz.h>

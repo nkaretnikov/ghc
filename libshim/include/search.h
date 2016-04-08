@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/search.h"
+#include_next <search.h>

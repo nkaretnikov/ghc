@@ -1,7 +1,7 @@
 #include <efi.h>
 #include <efilib.h>
 
-#include "../include/sys/times.h"
+#include <sys/times.h>
 
 clock_t times(struct tms *ptms)
 {

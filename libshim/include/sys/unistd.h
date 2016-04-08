@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/unistd.h"
+#include_next <sys/unistd.h>

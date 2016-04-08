@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sched.h"
+#include_next <sched.h>

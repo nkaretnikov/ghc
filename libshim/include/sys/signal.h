@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/signal.h"
+#include_next <sys/signal.h>

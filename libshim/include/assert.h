@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/assert.h"
+#include_next <assert.h>

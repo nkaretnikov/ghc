@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/config.h"
+#include_next <sys/config.h>

@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/param.h"
+#include_next <sys/param.h>

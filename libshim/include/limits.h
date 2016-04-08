@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/limits.h"
+#include_next <limits.h>

@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/machine/param.h"
+#include_next <machine/param.h>

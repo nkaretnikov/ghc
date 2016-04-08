@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/dirent.h"
+#include_next <sys/dirent.h>

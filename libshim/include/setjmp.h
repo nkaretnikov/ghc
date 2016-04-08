@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/setjmp.h"
+#include_next <setjmp.h>

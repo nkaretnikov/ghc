@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/queue.h"
+#include_next <sys/queue.h>

@@ -37,7 +37,7 @@ done
 for arg in "$@"; do
   if [ $arg == "-E" ]; then
     "${BIN_PREFIX}gcc" \
-      -fPIC -I$LIBSHIMINC $LIBGCCINCS \
+      -fPIC -I$LIBSHIMINC -I$NEWLIBINC \
       -fno-stack-protector -fshort-wchar \
       -mno-red-zone -Wall \
       $HASKELL_BASE_CFLAGS \

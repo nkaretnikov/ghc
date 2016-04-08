@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/string.h"
+#include_next <sys/string.h>

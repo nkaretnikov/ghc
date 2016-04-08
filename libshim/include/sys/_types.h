@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/_types.h"
+#include_next <sys/_types.h>

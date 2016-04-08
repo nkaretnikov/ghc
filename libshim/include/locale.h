@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/locale.h"
+#include_next <locale.h>

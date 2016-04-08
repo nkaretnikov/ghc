@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/ctype.h"
+#include_next <ctype.h>

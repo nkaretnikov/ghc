@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/stdio.h"
+#include_next <stdio.h>

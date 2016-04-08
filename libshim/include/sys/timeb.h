@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/timeb.h"
+#include_next <sys/timeb.h>

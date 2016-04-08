@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/ieeefp.h"
+#include_next <ieeefp.h>

@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/sys/timespec.h"
+#include_next <sys/timespec.h>

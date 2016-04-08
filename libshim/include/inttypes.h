@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/inttypes.h"
+#include_next <inttypes.h>

@@ -1,1 +1,1 @@
-#include "../newlib/x86_64-elf/include/spawn.h"
+#include_next <spawn.h>
