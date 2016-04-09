@@ -323,7 +323,7 @@ endif
 
 #-----------------------------------------------------------------------------
 # Flags for compiling specific files
-rts/Linker_CC_OPTS += -Wno-old-style-declaration
+rts/Linker_CC_OPTS += -Wno-old-style-declaration -Wno-redundant-decls
 rts/posix/OSMem_CC_OPTS += -Wno-redundant-decls
 rts/posix/Itimer_CC_OPTS += -Wno-unused-value
 rts/posix/TTY_CC_OPTS += -Wno-unused-value
