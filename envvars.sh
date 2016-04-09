@@ -30,12 +30,11 @@ NEWLIBLIB="$GHC_DIR/libshim/newlib/x86_64-elf/lib"
 # XXX: I've been told that it might be easier to pass CFLAGS and LDFLAGS
 # directly to '--with-gcc' and '--with-ld'.  Haven't tried that yet.
 #
-# XXX: Move the definition of '_POSIX_THREADS' (from
-# utils/deriveConstants/Main.hs) here.
 HASKELL_BASE_CFLAGS="-DHAVE_UNISTD_H=1 -DHAVE_FTRUNCATE=1 -D__x86_64__=1 -DHAVE_TERMIOS_H=0 -D_POSIX_REALTIME_SIGNALS=1"
+HASKELL_RTS_CFLAGS="-D_POSIX_THREADS=1"
 HASKELL_TIME_CFLAGS="-D__TM_ZONE=tm_zone"
 EFI_CFLAGS="-fPIC $EFIINCS -I$LIBSHIMINC -I$NEWLIBINC -fno-stack-protector -fshort-wchar -mno-red-zone -Wall -DEFI_FUNCTION_WRAPPER"
-CFLAGS="$EFI_CFLAGS $HASKELL_BASE_CFLAGS $HASKELL_TIME_CFLAGS"
+CFLAGS="$EFI_CFLAGS $HASKELL_BASE_CFLAGS $HASKELL_RTS_CFLAGS $HASKELL_TIME_CFLAGS"
 LDFLAGS="-nostdlib -znocombreloc -T $EFI_LDS -shared -L $EFILIB $EFI_CRT_OBJS -L $LIBSHIMLIB -L $NEWLIBLIB"
 
 export CONF_CC_OPTS_STAGE1="$CFLAGS"

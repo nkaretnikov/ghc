@@ -41,6 +41,7 @@ for arg in "$@"; do
       -fno-stack-protector -fshort-wchar \
       -mno-red-zone -Wall \
       $HASKELL_BASE_CFLAGS \
+      $HASKELL_RTS_CFLAGS \
       $HASKELL_TIME_CFLAGS \
       $LDFLAGS \
       "$@" \
