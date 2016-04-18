@@ -4,7 +4,7 @@ set -e
 
 source $HOME/haskell/ghc/envvars.sh
 
-SRCS="dlfcn iconv mman poll signal sys/select termios time times"
+SRCS="dlfcn iconv mman poll signal sys/select termios time times unistd"
 for SRC in $SRCS; do
   x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/$SRC.o" "${LIBSHIMSRC}/$SRC.c"
   x86_64-elf-ar cr "${LIBSHIMLIB}/libshim.a" "${LIBSHIMOBJ}/$SRC.o"
