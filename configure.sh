@@ -4,29 +4,15 @@ set -e
 
 source $HOME/haskell/ghc/envvars.sh
 
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/dlfcn.o" "${LIBSHIMSRC}/dlfcn.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/iconv.o" "${LIBSHIMSRC}/iconv.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/mman.o" "${LIBSHIMSRC}/mman.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/poll.o" "${LIBSHIMSRC}/poll.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/signal.o" "${LIBSHIMSRC}/signal.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/sys/select.o" "${LIBSHIMSRC}/sys/select.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/termios.o" "${LIBSHIMSRC}/termios.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/time.o" "${LIBSHIMSRC}/time.c"
-x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/times.o" "${LIBSHIMSRC}/times.c"
-x86_64-elf-ar cr \
-  "${LIBSHIMLIB}/libshim.a" \
-  "${LIBSHIMOBJ}/dlfcn.o" \
-  "${LIBSHIMOBJ}/iconv.o" \
-  "${LIBSHIMOBJ}/mman.o" \
-  "${LIBSHIMOBJ}/poll.o" \
-  "${LIBSHIMOBJ}/signal.o" \
-  "${LIBSHIMOBJ}/sys/select.o" \
-  "${LIBSHIMOBJ}/termios.o" \
-  "${LIBSHIMOBJ}/time.o" \
-  "${LIBSHIMOBJ}/times.o"
+SRCS="dlfcn iconv mman poll signal sys/select termios time times"
+for SRC in $SRCS; do
+  x86_64-elf-gcc $CFLAGS -c -o "${LIBSHIMOBJ}/$SRC.o" "${LIBSHIMSRC}/$SRC.c"
+  x86_64-elf-ar cr "${LIBSHIMLIB}/libshim.a" "${LIBSHIMOBJ}/$SRC.o"
+done
 
 ./configure \
   CPP="${BIN_PREFIX}gcc -E" \
+  --verbose \
   --target=$TARGET \
   --prefix=$PREFIX \
   --with-gcc="/home/nikita/haskell/ghc/gcc.sh" \
