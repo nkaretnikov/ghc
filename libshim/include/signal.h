@@ -19,3 +19,7 @@ typedef struct sigaction
 typedef struct sigevent
 {
 };
+
+typedef struct
+{
+} sigset_t;
