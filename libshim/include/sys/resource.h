@@ -14,3 +14,7 @@ struct rlimit
 #define RLIMIT_CORE   4
 #define RLIMIT_NOFILE 7
 #define RLIM_INFINITY 0xffffffffffffffffuLL
+
+#define PRIO_PROCESS 0
+#define PRIO_PGRP    1
+#define PRIO_USER    2
