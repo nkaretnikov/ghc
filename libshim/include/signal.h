@@ -10,3 +10,12 @@ typedef struct
   int si_uid;
   int si_status;
 } siginfo_t;
+
+// XXX: Missing fields.
+typedef struct sigaction
+{
+};
+
+typedef struct sigevent
+{
+};
